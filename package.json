@@ -1,0 +1,23 @@
+{
+  "name": "physicslab",
+  "version": "1.1.0",
+  "description": "PhysicsLab — interaktywne laboratorium fizyki / interactive physics lab",
+  "private": true,
+  "type": "module",
+  "author": "CappySoft.pl",
+  "scripts": {
+    "start": "npx --yes http-server . -c-1 -o",
+    "build": "node tools/build.mjs",
+    "build:min": "node tools/build.mjs --minify",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write index.html \"css/**/*.css\" \"js/**/*.js\" \"tests/**/*.mjs\" \"tools/**/*.mjs\" \"docs/templates/*.js\"",
+    "format:check": "prettier --check index.html \"css/**/*.css\" \"js/**/*.js\" \"tests/**/*.mjs\" \"tools/**/*.mjs\" \"docs/templates/*.js\"",
+    "check": "npm run format:check && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}

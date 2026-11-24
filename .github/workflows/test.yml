@@ -1,0 +1,18 @@
+# Runs the physics/structure tests and checks formatting on every push and pull request.
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx --yes prettier@3 --check index.html "css/**/*.css" "js/**/*.js" "tests/**/*.mjs" "tools/**/*.mjs" "docs/templates/*.js"
+      - run: node --test tests/*.test.mjs
+      - run: node tools/build.mjs

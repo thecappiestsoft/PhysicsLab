@@ -1,0 +1,64 @@
+/* PhysicsLab — Whiteboard mode and responsive breakpoints. */
+/* board mode */
+body.board {
+  font-size: 17px;
+}
+body.board .btn {
+  height: 46px;
+  font-size: 16px;
+  padding: 0 16px;
+}
+body.board .btn svg {
+  width: 20px;
+  height: 20px;
+}
+body.board input[type='range'] {
+  height: 34px;
+}
+body.board .prm .lab {
+  font-size: 16px;
+}
+body.board .rd .v {
+  font-size: 19px;
+}
+body.board .layout {
+  grid-template-columns: minmax(0, 1fr) 400px;
+}
+body.board .sim-head h1 {
+  font-size: 34px;
+}
+
+@media (max-width: 1100px) {
+  .grid-sec {
+    grid-template-columns: 1fr 1fr;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  body.board .layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .wrap {
+    padding: 0 14px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+  .grid-sec {
+    grid-template-columns: 1fr;
+  }
+  nav.main {
+    display: none;
+  }
+  .brand span {
+    display: none;
+  }
+  .lab-notes {
+    grid-template-columns: 1fr;
+  }
+}
